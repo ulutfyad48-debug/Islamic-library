@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ulutfyad48-debug.github.io/Islamic-library/sitemap.xml

@@ -1,6 +1,4 @@
-# تمام سرچ انجن بوٹس کو پوری ویب سائٹ کرال کرنے کی اجازت دیں
 User-agent: *
 Allow: /
 
-# سائیٹ میپ کا پتہ
 Sitemap: https://ulutfyad48-debug.github.io/Islamic-library/sitemap.xml

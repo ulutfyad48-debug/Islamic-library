@@ -222,6 +222,12 @@
             border: 2px solid var(--primary-gold);
         }
 
+        /* Special Blue Color for Quran MP3 */
+        .folder-card.mp3-card {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            border-color: #ffffff;
+        }
+
         .folder-card.secondary {
             background: linear-gradient(135deg, #2c3e50, #000);
         }
@@ -306,21 +312,6 @@
                 gap: 20px;
             }
         }
-
-        @media (max-width: 480px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .navbar {
-                padding: 15px 3%;
-            }
-
-            .hero {
-                padding: 40px 3%;
-                margin: 10px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -350,6 +341,14 @@
                 <p>مخارج الحروف اور صفات کے مکمل قواعد کا ذخیرہ</p>
             </div>
             <a href="https://drive.google.com/drive/folders/1uJw9qSvqvHrkhr7mCUtji-KBSz7LRJHl" target="_blank" rel="noopener noreferrer" class="folder-btn">فولڈر کھولیں</a>
+        </div>
+
+        <div class="folder-card mp3-card">
+            <div class="folder-content">
+                <h3><i class="fas fa-volume-up"></i> قرآن مجید MP3</h3>
+                <p>خوبصورت آواز میں تلاوتِ قرآن مجید سننے کے لیے یہاں کلک کریں</p>
+            </div>
+            <a href="https://ulutfyad48-debug.github.io/Quran-MP3/" target="_blank" rel="noopener noreferrer" class="folder-btn">تلاوت سنیں</a>
         </div>
 
         <div class="section-header">

@@ -124,7 +124,7 @@
             border: 1px dashed var(--gold);
             padding: 15px;
             border-radius: 15px;
-            margin: 20px auto;
+            margin: 10px auto;
             max-width: 800px;
         }
 
@@ -139,7 +139,7 @@
             text-decoration: underline;
         }
 
-        /* Help Modal */
+        /* Help Modal Styles (Same as before) */
         #helpModal {
             display: none;
             position: fixed;
@@ -217,11 +217,6 @@
             animation: slideIn 0.4s;
         }
 
-        @keyframes slideIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
         .dots-container {
             margin: 15px 0;
         }
@@ -255,14 +250,6 @@
             font-size: 1rem;
         }
 
-        .help-note {
-            margin-top: 20px;
-            font-size: 0.95rem;
-            color: #cbd5e1;
-            font-family: 'Noto Nastaliq Urdu', serif;
-            line-height: 1.8;
-        }
-
         /* Search & Grid */
         .container {
             max-width: 1200px;
@@ -294,11 +281,6 @@
             font-size: 1rem;
             font-family: 'Noto Nastaliq Urdu', serif;
             transition: 0.3s;
-        }
-
-        .search-box:focus {
-            background: rgba(255,255,255,0.15);
-            box-shadow: 0 0 20px rgba(255,215,0,0.3);
         }
 
         .grid {
@@ -363,11 +345,10 @@
         /* Responsive */
         @media (max-width: 768px) {
             .logo { font-size: 1.3rem; }
-            .nav-buttons { gap: 5px; }
+            .nav-buttons { gap: 5px; justify-content: center; }
             .btn { padding: 8px 12px; font-size: 0.75rem; }
             .profile-section { margin: 20px; padding: 30px 20px; }
             .profile-title { font-size: 1.6rem; }
-            .profile-desc { font-size: 1rem; }
             .section-title { font-size: 1.8rem; }
         }
     </style>
@@ -383,6 +364,9 @@
             <button class="btn btn-help" onclick="openHelp()">
                 <i class="fas fa-question-circle"></i> ہیلپ
             </button>
+            <a href="https://ulutfyad48-debug.github.io/Quran-Majeed-in-audio-file-with-Urdu-/" class="btn btn-gold" target="_blank">
+                <i class="fas fa-language"></i> قرآن اردو ترجمہ (MP3)
+            </a>
             <a href="https://ulutfyad48-debug.github.io/Quran-MP3/" class="btn btn-gold" target="_blank">
                 <i class="fas fa-headphones"></i> قرآن آڈیو
             </a>
@@ -406,19 +390,16 @@
         <div class="help-content">
             <span class="close-btn" onclick="closeHelp()">×</span>
             <h3 class="step-title" id="stepCount">Step 1</h3>
-            
             <div class="img-wrapper">
                 <img class="step-img active" src="https://lh3.googleusercontent.com/d/1pgXfiZloROtNbeN_4EfcM7DvJyKCccvC" alt="Step 1">
                 <img class="step-img" src="https://lh3.googleusercontent.com/d/1GCfCSiZ57UjrJcJo7jjLdkdk6KBKWk0r" alt="Step 2">
                 <img class="step-img" src="https://lh3.googleusercontent.com/d/106TfecZzov1ELUg85-pR8tNAEdqtaL_Z" alt="Step 3">
             </div>
-
             <div class="dots-container">
                 <span class="dot active" onclick="goToStep(0)"></span>
                 <span class="dot" onclick="goToStep(1)"></span>
                 <span class="dot" onclick="goToStep(2)"></span>
             </div>
-            
             <div class="slider-buttons">
                 <button class="btn btn-gold slider-btn" onclick="changeStep(-1)">
                     <i class="fas fa-arrow-left"></i> پیچھے
@@ -427,8 +408,7 @@
                     اگلا <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
-            
-            <p class="help-note">
+            <p class="help-note" style="margin-top: 15px; font-size: 0.9rem; color: #ccc;">
                 ڈاؤن لوڈ کا طریقہ سمجھنے کے لیے تصاویر دیکھیں۔
             </p>
         </div>
@@ -438,15 +418,20 @@
         <input type="text" id="searchInput" class="search-box" placeholder="🔍 کتاب یا سورہ تلاش کریں...">
 
         <div class="audio-banner">
-            <p class="profile-desc" style="margin-bottom: 0;">
-                <i class="fas fa-volume-up"></i> قرآن مجید کی آڈیو کلپ سننے کے لیے 
+            <p class="profile-desc" style="margin-bottom: 10px; font-size: 1rem;">
+                <i class="fas fa-volume-up"></i> صرف تلاوت سننے کے لیے 
                 <a href="https://ulutfyad48-debug.github.io/Quran-MP3/" target="_blank">یہاں پر کلک کریں</a>
+            </p>
+            <div style="height: 1px; background: rgba(255,215,0,0.3); margin: 10px 0;"></div>
+            <p class="profile-desc" style="margin-bottom: 0; font-size: 1rem;">
+                <i class="fas fa-microphone-lines"></i> <strong>قرآن مجید بمعہ اردو ترجمہ (MP3)</strong> کے لیے 
+                <a href="https://ulutfyad48-debug.github.io/Quran-Majeed-in-audio-file-with-Urdu-/" target="_blank">یہاں پر کلک کریں</a>
             </p>
         </div>
 
         <h2 class="section-title" id="quran-section">
             <i class="fas fa-book-quran"></i>
-           قرآن مجید 
+           قرآن مجید (پی ڈی ایف)
         </h2>
         <div id="quranLoading" class="loading">
             <i class="fas fa-spinner fa-spin"></i> لوڈ ہو رہا ہے...
@@ -468,7 +453,6 @@
         const QURAN_FOLDER = '12Z5rw7X1VMEkch2X9e-JyeOO5FmJYVkT';
         const BOOKS_FOLDER = '1YDLO466xaB-ytUtBI9ZWk4eMfHOoX_CC';
 
-        // Fetch Drive Files
         async function fetchDriveFiles(folderId, containerId, loaderId) {
             try {
                 const response = await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id,name)&key=${API_KEY}`);
@@ -496,27 +480,18 @@
             }
         }
 
-        // Help Slider
+        // Help Slider Logic
         let currentStep = 0;
         const steps = document.querySelectorAll('.step-img');
         const dots = document.querySelectorAll('.dot');
         const stepCountText = document.getElementById('stepCount');
 
-        function openHelp() {
-            document.getElementById('helpModal').style.display = 'flex';
-        }
-
-        function closeHelp() {
-            document.getElementById('helpModal').style.display = 'none';
-        }
+        function openHelp() { document.getElementById('helpModal').style.display = 'flex'; }
+        function closeHelp() { document.getElementById('helpModal').style.display = 'none'; }
 
         function updateStep() {
-            steps.forEach((step, i) => {
-                step.classList.toggle('active', i === currentStep);
-            });
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentStep);
-            });
+            steps.forEach((step, i) => step.classList.toggle('active', i === currentStep));
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentStep));
             stepCountText.innerText = `Step ${currentStep + 1}`;
         }
 
@@ -530,7 +505,7 @@
             updateStep();
         }
 
-        // Search Functionality
+        // Search
         document.getElementById('searchInput').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
             document.querySelectorAll('.card').forEach(card => {
@@ -539,7 +514,6 @@
             });
         });
 
-        // Load on Page Load
         window.onload = () => {
             fetchDriveFiles(QURAN_FOLDER, 'quranGrid', 'quranLoading');
             fetchDriveFiles(BOOKS_FOLDER, 'booksGrid', 'booksLoading');

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="u0HQvmeVKbyBWL1oaDDylFERp4bmJKpg-IT7i_U0CmE" />
+    <meta name="google-site-verification" content="u0HQvmeVKbyBWL1oaDDylFERp4bmJKpg-IT7i_U0CmE" />
     <title>یداللہ ڈیجیٹل لائبریری</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
@@ -118,8 +118,25 @@
             font-family: 'Noto Nastaliq Urdu', serif;
         }
 
-        .tajweed-btn {
-            display: none;
+        /* Audio Banner */
+        .audio-banner {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px dashed var(--gold);
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .audio-banner a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .audio-banner a:hover {
+            text-decoration: underline;
         }
 
         /* Help Modal */
@@ -347,7 +364,7 @@
         @media (max-width: 768px) {
             .logo { font-size: 1.3rem; }
             .nav-buttons { gap: 5px; }
-            .btn { padding: 8px 15px; font-size: 0.85rem; }
+            .btn { padding: 8px 12px; font-size: 0.75rem; }
             .profile-section { margin: 20px; padding: 30px 20px; }
             .profile-title { font-size: 1.6rem; }
             .profile-desc { font-size: 1rem; }
@@ -357,7 +374,6 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
             <i class="fas fa-mosque"></i>
@@ -367,13 +383,15 @@
             <button class="btn btn-help" onclick="openHelp()">
                 <i class="fas fa-question-circle"></i> ہیلپ
             </button>
+            <a href="https://ulutfyad48-debug.github.io/Quran-MP3/" class="btn btn-gold" target="_blank">
+                <i class="fas fa-headphones"></i> قرآن آڈیو
+            </a>
             <a href="https://ulutfyad48-debug.github.io/DIT-course/" class="btn btn-gold" target="_blank">
                 <i class="fas fa-graduation-cap"></i> DIT کورس
             </a>
         </div>
     </nav>
 
-    <!-- Profile Section -->
     <div class="profile-section">
         <div class="profile-img-wrapper">
             <img src="https://lh3.googleusercontent.com/d/1jqgkoCG2jYevAJaE5FNbt03_Surj8PHB" alt="یداللہ">
@@ -384,7 +402,6 @@
         </p>
     </div>
 
-    <!-- Help Modal -->
     <div id="helpModal">
         <div class="help-content">
             <span class="close-btn" onclick="closeHelp()">×</span>
@@ -417,9 +434,15 @@
         </div>
     </div>
 
-    <!-- Main Content -->
     <div class="container">
         <input type="text" id="searchInput" class="search-box" placeholder="🔍 کتاب یا سورہ تلاش کریں...">
+
+        <div class="audio-banner">
+            <p class="profile-desc" style="margin-bottom: 0;">
+                <i class="fas fa-volume-up"></i> قرآن مجید کی آڈیو کلپ سننے کے لیے 
+                <a href="https://ulutfyad48-debug.github.io/Quran-MP3/" target="_blank">یہاں پر کلک کریں</a>
+            </p>
+        </div>
 
         <h2 class="section-title" id="quran-section">
             <i class="fas fa-book-quran"></i>

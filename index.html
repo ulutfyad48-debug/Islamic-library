@@ -1,226 +1,291 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="u0HQvmeVKbyBWL1oaDDylFERp4bmJKpg-IT7i_U0CmE" />
-    <title>اسلامک ڈیجیٹل لائبریری</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --gold: #FFD700;
-            --deep-blue: #020b1a;
-            --accent: #D4AF37;
-            --card-glass: rgba(255, 255, 255, 0.07);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="u0HQvmeVKbyBWL1oaDDylFERp4bmJKpg-IT7i_U0CmE">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<title>اسلامک ڈیجیٹل لائبریری</title>
 
-        body {
-            font-family: 'Noto Nastaliq Urdu', 'Amiri', serif;
-            background: linear-gradient(135deg, #020b1a 0%, #051937 100%);
-            color: #fff;
-            text-align: center;
-            min-height: 100vh;
-        }
+<!-- Optimized Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
-        /* Navbar */
-        .navbar {
-            background: rgba(2, 11, 26, 0.95);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0; z-index: 1000;
-            border-bottom: 2px solid var(--gold);
-        }
+<style>
+:root{
+  --gold:#FFD700;
+  --dark:#020b1a;
+}
 
-        .logo { color: var(--gold); font-size: 1.4rem; font-weight: bold; }
+*{margin:0;padding:0;box-sizing:border-box}
 
-        .btn-help { background: #d63031; color: #fff; padding: 10px 20px; border-radius: 50px; border: none; cursor: pointer; font-weight: bold; }
+body{
+  font-family:'Amiri',serif;
+  background:linear-gradient(135deg,#020b1a,#051937);
+  color:#fff;
+  text-align:center;
+  min-height:100vh;
+}
 
-        /* Profile Header */
-        .header-box {
-            padding: 40px 20px;
-            background: url('https://www.transparenttextures.com/patterns/islamic-art.png');
-        }
+/* Navbar */
+.navbar{
+  background:rgba(2,11,26,.95);
+  padding:15px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:2px solid var(--gold);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.logo{color:var(--gold);font-size:1.3rem;font-weight:bold}
+.nav-btn{
+  background:#d63031;
+  color:#fff;
+  border:none;
+  padding:8px 15px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+  margin-left:5px;
+}
+.nav-link{
+  color:var(--gold);
+  text-decoration:none;
+  font-weight:bold;
+  margin-right:10px;
+}
 
-        .profile-pic {
-            width: 140px; height: 140px;
-            border-radius: 50%;
-            border: 4px solid var(--gold);
-            margin-bottom: 15px;
-            object-fit: cover;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-        }
+/* Header */
+.header-box{padding:40px 20px}
+.profile-pic{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  border:4px solid var(--gold);
+  object-fit:cover;
+}
 
-        /* Help Modal Slider */
-        #helpModal {
-            display: none; position: fixed; top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.92);
-            z-index: 2000; justify-content: center; align-items: center;
-        }
+/* Container */
+.container{max-width:1200px;margin:auto;padding:20px}
 
-        .help-container {
-            background: #0a192f; border: 2px solid var(--gold);
-            width: 90%; max-width: 420px; border-radius: 20px;
-            padding: 20px; position: relative;
-        }
+/* Audio */
+.audio-section{
+  background:rgba(255,255,255,.06);
+  border-radius:20px;
+  padding:25px;
+  margin-bottom:40px;
+}
+.audio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.audio-card{
+  background:rgba(255,215,0,.15);
+  padding:20px;
+  border-radius:15px;
+  color:var(--gold);
+  text-decoration:none;
+  font-weight:bold;
+}
+.audio-card:hover{background:var(--gold);color:#000}
 
-        .slider-img { width: 100%; border-radius: 12px; border: 1px solid #444; display: none; margin: 15px 0; }
-        .slider-img.active { display: block; animation: zoomIn 0.3s; }
+/* Search */
+.search-bar{
+  width:100%;
+  max-width:500px;
+  padding:14px;
+  border-radius:50px;
+  border:2px solid var(--gold);
+  background:transparent;
+  color:#fff;
+  margin:25px auto;
+  text-align:center;
+}
 
-        /* Sections Grid */
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+/* Cards */
+.pdf-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:25px;
+}
+.card{
+  background:#fff;
+  color:#222;
+  padding:25px;
+  border-radius:20px;
+  border-bottom:5px solid var(--gold);
+}
+.dl-btn{
+  display:block;
+  margin-top:15px;
+  background:var(--dark);
+  color:#fff;
+  padding:12px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-        .audio-section {
-            background: var(--card-glass);
-            border-radius: 25px; border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 25px; margin-bottom: 40px;
-        }
+/* Help Modal */
+#helpModal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  z-index:2000;
+  justify-content:center;
+  align-items:center;
+}
+.help-container{
+  background:#0a192f;
+  border:2px solid var(--gold);
+  width:90%;
+  max-width:420px;
+  border-radius:20px;
+  padding:20px;
+  position:relative;
+}
+.slider-img{
+  width:100%;
+  border-radius:10px;
+  display:none;
+}
+.slider-img.active{display:block}
 
-        .audio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
-        
-        .audio-card {
-            background: rgba(212, 175, 55, 0.1); padding: 20px;
-            border-radius: 15px; border: 1px solid var(--gold);
-            color: var(--gold); text-decoration: none; font-weight: bold; transition: 0.3s;
-        }
-        .audio-card:hover { background: var(--gold); color: #000; transform: scale(1.03); }
+.btn-help{
+  background:#444;
+  color:#fff;
+  border:none;
+  padding:10px;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-        .search-bar {
-            width: 100%; max-width: 500px; padding: 15px; border-radius: 50px;
-            border: 2px solid var(--gold); background: transparent; color: #fff;
-            margin-bottom: 30px; font-family: 'Noto Nastaliq Urdu'; text-align: center;
-        }
-
-        .pdf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-
-        .card {
-            background: #fff; color: #222; padding: 30px; border-radius: 25px;
-            transition: 0.4s; border-bottom: 6px solid var(--accent);
-        }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(255,215,0,0.2); }
-
-        .dl-btn {
-            display: block; background: var(--deep-blue); color: #fff;
-            padding: 12px; border-radius: 12px; text-decoration: none;
-            margin-top: 15px; font-weight: bold;
-        }
-
-        @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-
-        .section-tag { color: var(--gold); font-size: 2rem; margin: 40px 0 20px; }
-    </style>
+/* Mobile */
+@media(max-width:768px){
+  .header-box{background:none}
+}
+</style>
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="logo"><i class="fas fa-mosque"></i> اسلامک ڈیجیٹل لائبریری</div>
-        <div class="nav-links">
-            <button class="btn-help" onclick="openHelp()"><i class="fas fa-question-circle"></i> ہیلپ</button>
-            <a href="https://ulutfyad48-debug.github.io/DIT-course/" style="color:var(--gold); margin-right:15px; text-decoration:none; font-weight:bold;">DIT کورس</a>
-        </div>
-    </nav>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">🕌 اسلامک ڈیجیٹل لائبریری</div>
+  <div>
+    <a class="nav-link" href="https://ulutfyad48-debug.github.io/DIT-course/" target="_blank">DIT کورس</a>
+    <button class="nav-btn" onclick="openHelp()">ہیلپ</button>
+  </div>
+</nav>
 
-    <div class="header-box">
-        <img src="https://lh3.googleusercontent.com/d/1jqgkoCG2jYevAJaE5FNbt03_Surj8PHB" alt="پروفائل" class="profile-pic">
-        <h1 style="color:var(--gold); font-size: 2.5rem;">اسلامک ڈیجیٹل لائبریری</h1>
-        <p>قرآن و حدیث کا مستند علمی ذخیرہ</p>
-    </div>
+<!-- HEADER -->
+<div class="header-box">
+  <img src="https://lh3.googleusercontent.com/d/1jqgkoCG2jYevAJaE5FNbt03_Surj8PHB"
+       class="profile-pic"
+       loading="lazy"
+       decoding="async"
+       width="140"
+       height="140">
+  <h1 style="color:var(--gold);margin-top:15px">اسلامک ڈیجیٹل لائبریری</h1>
+  <p>قرآن و حدیث کا مستند علمی ذخیرہ</p>
+</div>
 
-    <div class="container">
-        <div class="audio-section">
-            <h2 style="color:var(--gold); margin-bottom:20px;"><i class="fas fa-headphones"></i> قرآن مجید آڈیو سیکشن</h2>
-            <div class="audio-grid">
-                <a href="https://ulutfyad48-debug.github.io/Quran-Majeed-in-audio-file-with-Urdu-/" class="audio-card" target="_blank">
-                    <i class="fas fa-language"></i><br>قرآن اردو ترجمہ (MP3)
-                </a>
-                <a href="https://ulutfyad48-debug.github.io/Quran-MP3/" class="audio-card" target="_blank">
-                    <i class="fas fa-microphone"></i><br>تلاوت قرآن (MP3)
-                </a>
-            </div>
-        </div>
+<div class="container">
 
-        <input type="text" id="searchInput" class="search-bar" placeholder="🔍 کتاب یا سورہ کا نام لکھیں...">
+<!-- AUDIO -->
+<div class="audio-section">
+<h2 style="color:var(--gold)">قرآن آڈیو</h2>
+<div class="audio-grid">
+<a class="audio-card" href="https://ulutfyad48-debug.github.io/Quran-Majeed-in-audio-file-with-Urdu-/" target="_blank">اردو ترجمہ MP3</a>
+<a class="audio-card" href="https://ulutfyad48-debug.github.io/Quran-MP3/" target="_blank">تلاوت قرآن MP3</a>
+</div>
+</div>
 
-        <h2 class="section-tag">قرآن مجید (پی ڈی ایف)</h2>
-        <div id="quranLoading">لوڈنگ ہو رہی ہے...</div>
-        <div id="quranGrid" class="pdf-grid"></div>
+<input id="searchInput" class="search-bar" placeholder="کتاب یا سورہ تلاش کریں">
 
-        <h2 class="section-tag">اسلامی کتب</h2>
-        <div id="booksLoading">لوڈنگ ہو رہی ہے...</div>
-        <div id="booksGrid" class="pdf-grid"></div>
-    </div>
+<h2 style="color:var(--gold)">قرآن PDF</h2>
+<div id="quranLoading">لوڈنگ...</div>
+<div id="quranGrid" class="pdf-grid"></div>
 
-    <div id="helpModal">
-        <div class="help-container">
-            <span style="position:absolute; top:10px; left:15px; cursor:pointer; font-size:2rem; color:#fff;" onclick="closeHelp()">×</span>
-            <h3 style="color:var(--gold); margin-top:10px;">ڈاؤن لوڈ کا طریقہ</h3>
-            
-            <div id="help-slider">
-                <img class="slider-img active" src="https://lh3.googleusercontent.com/d/1pgXfiZloROtNbeN_4EfcM7DvJyKCccvC">
-                <img class="slider-img" src="https://lh3.googleusercontent.com/d/1GCfCSiZ57UjrJcJo7jjLdkdk6KBKWk0r">
-                <img class="slider-img" src="https://lh3.googleusercontent.com/d/106TfecZzov1ELUg85-pR8tNAEdqtaL_Z">
-            </div>
+<h2 style="color:var(--gold)">اسلامی کتب</h2>
+<div id="booksLoading">لوڈنگ...</div>
+<div id="booksGrid" class="pdf-grid"></div>
 
-            <div style="display:flex; gap:10px; margin-top:15px;">
-                <button class="btn-help" style="flex:1; background:#444;" onclick="moveStep(-1)">پیچھے</button>
-                <button class="btn-help" style="flex:1; background:var(--gold); color:#000;" onclick="moveStep(1)">اگلا</button>
-            </div>
-        </div>
-    </div>
+</div>
 
-    <script>
-        const API_KEY = 'AIzaSyAvOyUJ8pnQCy5K9-783LTOAAnVnGeNdXw';
-        const Q_FOLDER = '12Z5rw7X1VMEkch2X9e-JyeOO5FmJYVkT';
-        const B_FOLDER = '1YDLO466xaB-ytUtBI9ZWk4eMfHOoX_CC';
+<!-- HELP MODAL -->
+<div id="helpModal">
+<div class="help-container">
+<span onclick="closeHelp()" style="position:absolute;top:10px;left:15px;font-size:2rem;cursor:pointer">×</span>
 
-        async function fetchFiles(fId, gId, lId) {
-            try {
-                const res = await fetch(`https://www.googleapis.com/drive/v3/files?q='${fId}'+in+parents&fields=files(id,name)&key=${API_KEY}`);
-                const data = await res.json();
-                document.getElementById(lId).style.display = 'none';
-                const grid = document.getElementById(gId);
-                data.files.forEach(f => {
-                    grid.innerHTML += `
-                        <div class="card" data-name="${f.name.toLowerCase()}">
-                            <i class="fas fa-file-pdf"></i>
-                            <h3>${f.name.replace('.pdf', '')}</h3>
-                            <a href="https://drive.google.com/file/d/${f.id}/view" target="_blank" class="dl-btn">مطالعہ کریں</a>
-                        </div>`;
-                });
-            } catch (e) { console.log(e); }
-        }
+<h3 style="color:var(--gold)">ڈاؤن لوڈ کرنے کا طریقہ</h3>
 
-        // Slider Functionality
-        let step = 0;
-        const imgs = document.querySelectorAll('.slider-img');
-        function openHelp() { document.getElementById('helpModal').style.display = 'flex'; }
-        function closeHelp() { document.getElementById('helpModal').style.display = 'none'; }
-        function moveStep(n) {
-            imgs[step].classList.remove('active');
-            step = (step + n + imgs.length) % imgs.length;
-            imgs[step].classList.add('active');
-        }
+<img class="slider-img active" src="https://lh3.googleusercontent.com/d/1pgXfiZloROtNbeN_4EfcM7DvJyKCccvC" loading="lazy">
+<img class="slider-img" src="https://lh3.googleusercontent.com/d/1GCfCSiZ57UjrJcJo7jjLdkdk6KBKWk0r" loading="lazy">
+<img class="slider-img" src="https://lh3.googleusercontent.com/d/106TfecZzov1ELUg85-pR8tNAEdqtaL_Z" loading="lazy">
 
-        // Search
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            const val = e.target.value.toLowerCase();
-            document.querySelectorAll('.card').forEach(c => {
-                c.style.display = c.dataset.name.includes(val) ? 'block' : 'none';
-            });
-        });
+<div style="display:flex;gap:10px;margin-top:15px">
+<button class="btn-help" style="flex:1" onclick="moveStep(-1)">◀ پیچھے</button>
+<button class="btn-help" style="flex:1;background:var(--gold);color:#000" onclick="moveStep(1)">اگلا ▶</button>
+</div>
 
-        window.onload = () => {
-            fetchFiles(Q_FOLDER, 'quranGrid', 'quranLoading');
-            fetchFiles(B_FOLDER, 'booksGrid', 'booksLoading');
-        };
-    </script>
+<a href="https://ulutfyad48-debug.github.io/DIT-course/"
+   target="_blank"
+   style="display:block;margin-top:15px;background:var(--gold);color:#000;
+   padding:12px;border-radius:12px;font-weight:bold;text-decoration:none">
+💻 DIT کورس (مفت)
+</a>
+
+</div>
+</div>
+
+<script defer>
+const API_KEY='AIzaSyAvOyUJ8pnQCy5K9-783LTOAAnVnGeNdXw';
+const Q_FOLDER='12Z5rw7X1VMEkch2X9e-JyeOO5FmJYVkT';
+const B_FOLDER='1YDLO466xaB-ytUtBI9ZWk4eMfHOoX_CC';
+
+async function fetchFiles(fid,gid,lid){
+ const res=await fetch(`https://www.googleapis.com/drive/v3/files?q='${fid}'+in+parents&fields=files(id,name)&key=${API_KEY}`);
+ const data=await res.json();
+ document.getElementById(lid).style.display='none';
+ data.files.forEach(f=>{
+ document.getElementById(gid).innerHTML+=`
+ <div class="card" data-name="${f.name.toLowerCase()}">
+ <h3>${f.name.replace('.pdf','')}</h3>
+ <a class="dl-btn" target="_blank" href="https://drive.google.com/file/d/${f.id}/view">مطالعہ کریں</a>
+ </div>`;
+ });
+}
+
+window.addEventListener('load',()=>{
+ setTimeout(()=>{
+ fetchFiles(Q_FOLDER,'quranGrid','quranLoading');
+ fetchFiles(B_FOLDER,'booksGrid','booksLoading');
+ },800);
+});
+
+searchInput.oninput=e=>{
+ document.querySelectorAll('.card').forEach(c=>{
+ c.style.display=c.dataset.name.includes(e.target.value.toLowerCase())?'block':'none';
+ });
+};
+
+let step=0;
+const imgs=document.querySelectorAll('.slider-img');
+function openHelp(){helpModal.style.display='flex'}
+function closeHelp(){helpModal.style.display='none'}
+function moveStep(n){
+ imgs[step].classList.remove('active');
+ step=(step+n+imgs.length)%imgs.length;
+ imgs[step].classList.add('active');
+}
+</script>
+
 </body>
 </html>

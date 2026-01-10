@@ -1,84 +1,53 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-
-<!-- BASIC -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>اسلامک ڈیجیٹل لائبریری | قرآن، حدیث، اسلامی کتب PDF</title>
 
-<meta name="description"
-content="اسلامک ڈیجیٹل لائبریری میں قرآن مجید، اردو ترجمہ، تلاوت MP3، اسلامی کتب PDF اور مفت DIT کورس دستیاب ہیں۔">
-
+<title>اسلامک ڈیجیٹل لائبریری | قرآن، اسلامی کتب PDF</title>
+<meta name="description" content="قرآن مجید PDF، آڈیو، اسلامی کتب اور DIT کورس – مفت اسلامی ڈیجیٹل لائبریری">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://ulutfyad48-debug.github.io/">
 
-<!-- GOOGLE VERIFY -->
-<meta name="google-site-verification"
-content="u0HQvmeVKbyBWL1oaDDylFERp4bmJKpg-IT7i_U0CmE">
-
-<!-- OPEN GRAPH -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="اسلامک ڈیجیٹل لائبریری">
-<meta property="og:description"
-content="قرآن، حدیث، اسلامی کتابیں PDF، آڈیو قرآن اور DIT کورس">
-<meta property="og:url" content="https://ulutfyad48-debug.github.io/">
-<meta property="og:image"
-content="https://lh3.googleusercontent.com/d/1jqgkoCG2jYevAJaE5FNbt03_Surj8PHB">
-
-<!-- TWITTER -->
-<meta name="twitter:card" content="summary_large_image">
-
-<!-- FONT -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- STRUCTURED DATA -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "اسلامک ڈیجیٹل لائبریری",
-  "url": "https://ulutfyad48-debug.github.io/",
-  "description": "قرآن، حدیث، اسلامی کتابیں PDF اور آڈیو",
-  "inLanguage": "ur"
-}
-</script>
 
 <style>
 body{
   font-family:'Amiri',serif;
   background:#020b1a;
   color:#fff;
-  text-align:center;
   margin:0;
+  text-align:center;
 }
+a{color:gold;text-decoration:none;font-weight:bold}
+
 .navbar{
-  background:#020b1a;
-  padding:15px;
-  border-bottom:2px solid gold;
   display:flex;
   justify-content:space-between;
+  padding:15px;
+  border-bottom:2px solid gold;
 }
-a{text-decoration:none;color:gold;font-weight:bold}
+
 .container{max-width:1200px;margin:auto;padding:20px}
+
 .profile-pic{
   width:140px;height:140px;
   border-radius:50%;
   border:4px solid gold;
 }
+
 .pdf-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
   gap:20px;
 }
+
 .card{
   background:#fff;
   color:#000;
   padding:20px;
   border-radius:15px;
 }
+
 .dl-btn{
   display:block;
   background:#020b1a;
@@ -87,32 +56,49 @@ a{text-decoration:none;color:gold;font-weight:bold}
   margin-top:10px;
   border-radius:10px;
 }
+
+/* ===== HELP CENTER ===== */
+.help-img{display:none}
+.help-img.active{display:block}
+
+#helpModal{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.95);
+  z-index:5000;
+  justify-content:center;
+  align-items:center;
+  overflow:auto;
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div>🕌 اسلامک ڈیجیٹل لائبریری</div>
-  <a href="https://ulutfyad48-debug.github.io/DIT-course/">DIT کورس</a>
+  <div>
+    <a href="https://ulutfyad48-debug.github.io/DIT-course/">DIT کورس</a> |
+    <a href="javascript:void(0)" onclick="openHelp()" style="color:red">❓ ہیلپ</a>
+  </div>
 </nav>
 
+<!-- HEADER -->
 <header class="container">
-  <img src="https://lh3.googleusercontent.com/d/1jqgkoCG2jYevAJaE5FNbt03_Surj8PHB"
-       alt="اسلامک ڈیجیٹل لائبریری پروفائل"
-       loading="lazy"
-       width="140"
-       height="140"
-       class="profile-pic">
-
+  <img src="https://lh3.googleusercontent.com/d/1jqgkoCG2jYevAJaE5FNbt03_Surj8PHB" class="profile-pic">
   <h1>اسلامک ڈیجیٹل لائبریری</h1>
-  <p>قرآن، حدیث اور مستند اسلامی علمی ذخیرہ</p>
+  <p>قرآن، حدیث اور مستند اسلامی ذخیرہ</p>
 </header>
 
+<!-- MAIN -->
 <main class="container">
 
 <h2>قرآن مجید آڈیو</h2>
-<a href="https://ulutfyad48-debug.github.io/Quran-Majeed-in-audio-file-with-Urdu-/">قرآن اردو ترجمہ MP3</a><br>
+<a href="https://ulutfyad48-debug.github.io/Quran-Majeed-in-audio-file-with-Urdu-/">اردو ترجمہ MP3</a><br>
 <a href="https://ulutfyad48-debug.github.io/Quran-MP3/">تلاوت قرآن MP3</a>
 
 <h2>قرآن مجید PDF</h2>
@@ -127,7 +113,53 @@ a{text-decoration:none;color:gold;font-weight:bold}
 <p>© 2026 اسلامک ڈیجیٹل لائبریری</p>
 </footer>
 
-<script defer>
+<!-- ===== HELP MODAL (FIXED) ===== -->
+<div id="helpModal">
+  <div style="
+    background:#1e293b;
+    padding:15px;
+    border-radius:15px;
+    border:2px solid gold;
+    max-width:420px;
+    width:90%;
+    max-height:90vh;
+    overflow-y:auto;
+    position:relative;">
+    
+    <span onclick="closeHelp()" style="
+      position:absolute;
+      top:-45px;
+      right:0;
+      font-size:35px;
+      cursor:pointer;">&times;</span>
+
+    <h3 id="stepTitle" style="color:gold">Step 1</h3>
+
+    <img class="help-img active"
+     src="https://lh3.googleusercontent.com/d/1pgXfiZloROtNbeN_4EfcM7DvJyKCccvC"
+     style="width:100%;max-height:55vh;object-fit:contain;border-radius:10px;">
+
+    <img class="help-img"
+     src="https://lh3.googleusercontent.com/d/1GCfCSiZ57UjrJcJo7jjLdkdk6KBKWk0r"
+     style="width:100%;max-height:55vh;object-fit:contain;border-radius:10px;">
+
+    <img class="help-img"
+     src="https://lh3.googleusercontent.com/d/106TfecZzov1ELUg85-pR8tNAEdqtaL_Z"
+     style="width:100%;max-height:55vh;object-fit:contain;border-radius:10px;">
+
+    <div style="margin-top:15px;display:flex;gap:10px">
+      <button onclick="changeStep(-1)" style="flex:1;padding:10px;font-weight:bold">◀ پیچھے</button>
+      <button onclick="changeStep(1)" style="flex:1;padding:10px;font-weight:bold">اگلا ▶</button>
+    </div>
+
+    <p style="font-size:13px;color:#ccc;margin-top:10px">
+      تصاویر دیکھ کر ڈاؤن لوڈ کرنے کا طریقہ سیکھیں
+    </p>
+  </div>
+</div>
+
+<script>
+/* ===== GOOGLE DRIVE ===== */
 const API_KEY='AIzaSyAvOyUJ8pnQCy5K9-783LTOAAnVnGeNdXw';
 const Q_FOLDER='12Z5rw7X1VMEkch2X9e-JyeOO5FmJYVkT';
 const B_FOLDER='1YDLO466xaB-ytUtBI9ZWk4eMfHOoX_CC';
@@ -138,16 +170,33 @@ async function fetchFiles(fid,gid){
  d.files.forEach(f=>{
  document.getElementById(gid).innerHTML+=`
  <div class="card">
- <h3>${f.name.replace('.pdf','')}</h3>
- <a class="dl-btn" href="https://drive.google.com/file/d/${f.id}/view" target="_blank">مطالعہ کریں</a>
+   <h3>${f.name.replace('.pdf','')}</h3>
+   <a class="dl-btn" href="https://drive.google.com/file/d/${f.id}/view" target="_blank">مطالعہ کریں</a>
  </div>`;
  });
 }
 
-window.addEventListener('load',()=>{
+window.onload=()=>{
  fetchFiles(Q_FOLDER,'quranGrid');
  fetchFiles(B_FOLDER,'booksGrid');
-});
+}
+
+/* ===== HELP JS ===== */
+let step=0;
+const imgs=document.querySelectorAll('.help-img');
+
+function openHelp(){
+ document.getElementById('helpModal').style.display='flex';
+}
+function closeHelp(){
+ document.getElementById('helpModal').style.display='none';
+}
+function changeStep(n){
+ imgs[step].classList.remove('active');
+ step=(step+n+imgs.length)%imgs.length;
+ imgs[step].classList.add('active');
+ document.getElementById('stepTitle').innerText="Step "+(step+1);
+}
 </script>
 
 </body>

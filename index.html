@@ -84,7 +84,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Animated Background */
 body::before {
   content: '';
   position: fixed;
@@ -103,7 +102,6 @@ body::before {
   z-index: 1;
 }
 
-/* Loading Animation */
 .loader {
   position: fixed;
   top: 0;
@@ -136,7 +134,6 @@ body::before {
   to { transform: rotate(360deg); }
 }
 
-/* Navbar */
 .navbar {
   position: sticky;
   top: 0;
@@ -202,7 +199,6 @@ body::before {
   box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
 }
 
-/* Header */
 .header {
   text-align: center;
   padding: 60px 20px 40px;
@@ -248,14 +244,12 @@ body::before {
   margin: 0 auto;
 }
 
-/* Container */
 .container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* Section Headers */
 .section-header {
   text-align: center;
   margin: 60px 0 40px;
@@ -281,7 +275,6 @@ body::before {
   background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
 }
 
-/* Audio Links */
 .audio-links {
   display: flex;
   justify-content: center;
@@ -317,7 +310,6 @@ body::before {
   font-size: 1.5em;
 }
 
-/* PDF Grid */
 .pdf-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -325,7 +317,6 @@ body::before {
   margin-top: 30px;
 }
 
-/* Cards */
 .card {
   background: var(--card-bg);
   color: #1a1a1a;
@@ -387,7 +378,6 @@ body::before {
   box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
 }
 
-/* Loading State */
 .loading-card {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
@@ -400,7 +390,6 @@ body::before {
   100% { background-position: -200% 0; }
 }
 
-/* Help Modal */
 #helpModal {
   display: none;
   position: fixed;
@@ -526,7 +515,6 @@ body::before {
   line-height: 1.6;
 }
 
-/* Footer */
 .footer {
   background: rgba(2, 11, 26, 0.95);
   border-top: 2px solid var(--accent-gold);
@@ -566,7 +554,6 @@ body::before {
   text-decoration: underline;
 }
 
-/* Scroll to Top Button */
 .scroll-top {
   position: fixed;
   bottom: 30px;
@@ -596,7 +583,6 @@ body::before {
   box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .navbar-content {
     flex-direction: column;
@@ -635,7 +621,6 @@ body::before {
   }
 }
 
-/* Accessibility */
 :focus-visible {
   outline: 3px solid var(--accent-gold);
   outline-offset: 2px;
@@ -653,7 +638,6 @@ body::before {
   border-width: 0;
 }
 
-/* Print Styles */
 @media print {
   .navbar, .footer, .scroll-top, #helpModal {
     display: none;
@@ -770,6 +754,16 @@ body::before {
          alt="Step 3 - ڈاؤن لوڈ کا طریقہ"
          loading="lazy">
 
+    <img class="help-img"
+         src="https://lh3.googleusercontent.com/d/1fJsB_AhQskZuyEHoE_4ONvDPgNgbyl9P"
+         alt="Step 4 - ڈاؤن لوڈ کا طریقہ"
+         loading="lazy">
+
+    <img class="help-img"
+         src="https://lh3.googleusercontent.com/d/1hnkdL0PNL3kxV7rdLHAAEobv81JVGAxQ"
+         alt="Step 5 - ڈاؤن لوڈ کا طریقہ"
+         loading="lazy">
+
     <div class="modal-buttons">
       <button class="modal-btn" onclick="changeStep(-1)" aria-label="پچھلا قدم">
         ◀ پیچھے
@@ -786,17 +780,15 @@ body::before {
 </div>
 
 <script>
-/* ===== CONFIGURATION ===== */
 const CONFIG = {
   API_KEY: 'AIzaSyC8GfeNEk_ugD9TG_5CGyUbwfvFQ88YJts',
   QURAN_FOLDER: '12Z5rw7X1VMEkch2X9e-JyeOO5FmJYVkT',
   BOOKS_FOLDER: '1YDLO466xaB-ytUtBI9ZWk4eMfHOoX_CC',
-  CACHE_DURATION: 3600000, // 1 hour
+  CACHE_DURATION: 3600000,
   RETRY_ATTEMPTS: 3,
   RETRY_DELAY: 1000
 };
 
-/* ===== CACHE MANAGEMENT ===== */
 const cache = {
   set: (key, data) => {
     try {
@@ -827,7 +819,6 @@ const cache = {
   }
 };
 
-/* ===== UTILITY FUNCTIONS ===== */
 const utils = {
   debounce: (func, wait) => {
     let timeout;
@@ -874,7 +865,6 @@ const utils = {
   }
 };
 
-/* ===== API HANDLER ===== */
 const api = {
   async fetchWithRetry(url, attempts = CONFIG.RETRY_ATTEMPTS) {
     for (let i = 0; i < attempts; i++) {
@@ -902,7 +892,6 @@ const api = {
   }
 };
 
-/* ===== UI RENDERING ===== */
 const ui = {
   createLoadingCards(container, count = 6) {
     container.innerHTML = Array(count).fill('').map(() => 
@@ -964,7 +953,6 @@ const ui = {
   }
 };
 
-/* ===== HELP MODAL ===== */
 const helpModal = {
   currentStep: 0,
   images: [],
@@ -991,7 +979,6 @@ const helpModal = {
   }
 };
 
-/* ===== SCROLL FUNCTIONALITY ===== */
 const scroll = {
   toTop() {
     window.scrollTo({
@@ -1010,18 +997,14 @@ const scroll = {
   }, 100)
 };
 
-/* ===== GLOBAL FUNCTIONS ===== */
 window.openHelp = () => helpModal.open();
 window.closeHelp = () => helpModal.close();
 window.changeStep = (dir) => helpModal.changeStep(dir);
 window.scrollToTop = () => scroll.toTop();
 
-/* ===== INITIALIZATION ===== */
 document.addEventListener('DOMContentLoaded', async () => {
-  // Initialize help modal
   helpModal.init();
 
-  // Load content
   try {
     await Promise.all([
       ui.renderFiles(CONFIG.QURAN_FOLDER, 'quranGrid'),
@@ -1031,15 +1014,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('Initialization error:', error);
   }
 
-  // Hide loader
   setTimeout(() => {
     document.getElementById('loader').classList.add('hidden');
   }, 800);
 
-  // Setup scroll listener
   window.addEventListener('scroll', scroll.handleScroll);
 
-  // Keyboard accessibility for modal
   document.addEventListener('keydown', (e) => {
     const modal = document.getElementById('helpModal');
     if (modal.style.display === 'flex') {
@@ -1049,12 +1029,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  // Click outside modal to close
   document.getElementById('helpModal').addEventListener('click', (e) => {
     if (e.target.id === 'helpModal') helpModal.close();
   });
 
-  // Performance monitoring
   if ('PerformanceObserver' in window) {
     try {
       const observer = new PerformanceObserver((list) => {
@@ -1068,16 +1046,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Service Worker Registration (for PWA capabilities)
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      // Service worker can be added here for offline support
       console.log('Ready for PWA implementation');
     });
   }
 });
 
-/* ===== ADDITIONAL ANIMATIONS ===== */
 const style = document.createElement('style');
 style.textContent = `
   @keyframes fadeIn {
@@ -1093,7 +1068,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-/* ===== ERROR BOUNDARY ===== */
 window.addEventListener('error', (e) => {
   console.error('Global error:', e.error);
 });

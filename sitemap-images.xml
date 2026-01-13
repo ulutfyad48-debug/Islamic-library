@@ -33,6 +33,20 @@
       <image:caption>PDF فائلیں ڈاؤن لوڈ کرنے کا طریقہ تیسرا قدم</image:caption>
     </image:image>
 
+    <!-- Help Step 4 Image -->
+    <image:image>
+      <image:loc>https://lh3.googleusercontent.com/d/1fJsB_AhQskZuyEHoE_4ONvDPgNgbyl9P</image:loc>
+      <image:title>ڈاؤن لوڈ کا طریقہ - Step 4</image:title>
+      <image:caption>PDF فائلیں ڈاؤن لوڈ کرنے کا طریقہ چوتھا قدم</image:caption>
+    </image:image>
+
+    <!-- Help Step 5 Image -->
+    <image:image>
+      <image:loc>https://lh3.googleusercontent.com/d/1hnkdL0PNL3kxV7rdLHAAEobv81JVGAxQ</image:loc>
+      <image:title>ڈاؤن لوڈ کا طریقہ - Step 5</image:title>
+      <image:caption>PDF فائلیں ڈاؤن لوڈ کرنے کا طریقہ پانچواں قدم</image:caption>
+    </image:image>
+
   </url>
 
 </urlset>
